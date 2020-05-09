@@ -25,6 +25,7 @@ import android.util.Log;
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.utils.FileUtils;
+import org.lineageos.settings.thermal.ThermalUtils;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
@@ -40,6 +41,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         DiracUtils.initialize(context);
         DozeUtils.checkDozeService(context);
+        ThermalUtils.startService(context);
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         boolean hbmEnabled = sharedPrefs.getBoolean(HBM_ENABLE_KEY, false);
