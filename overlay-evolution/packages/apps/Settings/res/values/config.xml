@@ -14,4 +14,7 @@
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">false</bool>
 
+    <!-- Whether to show Smooth Display feature in Settings Options -->
+    <bool name="config_show_smooth_display">true</bool>
+
 </resources>
